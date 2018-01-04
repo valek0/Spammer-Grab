@@ -9,4 +9,8 @@
 import spammer_class
 spammer = spammer_class.Spammer()
 spammer.author = "P4kL0nc4t"
-spammer.main()
+try:
+    spammer.main()
+except KeyboardInterrupt:
+    print "\r[!][except] KeyboardInterrupt detected! Exiting . . ."
+    exit()
