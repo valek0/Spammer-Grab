@@ -32,8 +32,15 @@ if [ -z "$1" ]
   then
     echo -e "spammer.py CLI backend by ${green}Wattana Gaming${white}"
     read -p "Victim's phone number: " phone_number
-    read -p "Delay time in second(s). 30 for maximum savage level: " delay
+    while true; do
+        read -p "Delay time in second(s). 30 for maximum savage level: " delay
+        if [ ${delay} -lt 30 ]; then
+            echo "Delay time cannot lower than 30"
+            continue
+        fi
+        break
+    done
     echo ""
     echo -e "${green}Thanks4Using!"
-    python spammer.py ${phone_number} --delay ${delay}
+    python2 spammer.py ${phone_number} --delay ${delay}
 fi
