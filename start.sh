@@ -11,6 +11,8 @@ green='\033[32m'
 red='\033[31m'
 yellow='\033[93m'
 
+warning='\033[1;4;91m'
+
 display_usage () {
   echo -e "${green}spammer.py${white} CLI backend by ${green}Wattana Gaming${white}"
   echo "There's no need for arguments. Just run this script and it will ask you for the \
@@ -33,14 +35,19 @@ if [ -z "$1" ]
     echo -e "spammer.py CLI backend by ${green}Wattana Gaming${white}"
     read -p "Victim's phone number: " phone_number
     while true; do
+        echo -e "${white}"
         read -p "Delay time in second(s). 30 for maximum savage level: " delay
+        echo -e "${warning}"
         if [ ${delay} -lt 30 ]; then
             echo "Delay time cannot lower than 30"
             continue
+        elif [[ -z $delay ]]; then
+          echo -e "${white}Delay time cannot be blank!"
+          continue
         fi
         break
     done
-    echo ""
+    echo "${white}"
     echo -e "${green}Thanks4Using!"
     python2 spammer.py ${phone_number} --delay ${delay}
 fi
