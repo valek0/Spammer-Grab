@@ -9,9 +9,3 @@ Spams GAC (Grab Activation Code) SMS to a phone number repeatedly per 60 second.
 
 # How to use?
 Just type `python2 spammer.py -h` to show the help message.
-
-# Me
-E-Mail:
-p4kl0nc4t@obsidiancyberteam.id (owner)
-admin@noxt.cf (fixer)
-Do not hesitate to contact us :)
